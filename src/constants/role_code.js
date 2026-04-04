@@ -1,0 +1,13 @@
+const ROLE_CODES = {
+  STUDENT: "STU",
+  TEACHER: "TCH",
+  ADMIN: "ADM",
+  SUPER_ADMIN: "SAD",
+  STAFF: "STF",
+  ACCOUNTANT: "ACC",
+  PRINCIPAL: "PRC",
+  DIRECTOR: "DIR",
+  PARENT: "PAR"
+};
+
+module.exports = ROLE_CODES;

@@ -1,5 +1,5 @@
 
-const permission = {
+const PERMISSIONS = {
     // for students
     student_view : "STUDENT_VIEW",
     student_create:"STUDENT_CREATE",
@@ -27,3 +27,5 @@ const permission = {
     assign_permissions : "ASSIGN_PERMISSIONS",
 
 }
+
+module.exports = PERMISSIONS;

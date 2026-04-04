@@ -7,16 +7,18 @@ const schoolSchema = mongoose.Schema({
         trim:true
 
     },
-
     schoolCode:{
         type:String,
         required:true,
         unique:true,
         trim:true,
+        uppercase:true,
         index:true
     },
 
-});
+},
+{ timestamps: true },
+);
 
 
 const School = mongoose.model("School",schoolSchema);

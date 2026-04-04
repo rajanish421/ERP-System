@@ -1,5 +1,5 @@
 
-const roles = {
+const ROLES = {
     student : "STUDENT",
     teacher : "TEACHER",
     admin : "ADMIN",
@@ -7,5 +7,8 @@ const roles = {
     staff : "STAFF",
     accountant : "ACCOUNTANT",
     principal : "PRINCIPAL",
-    director : "DIRECTOR"
+    director : "DIRECTOR",
+    parent:"PARENT"
 };
+
+module.exports = ROLES;
