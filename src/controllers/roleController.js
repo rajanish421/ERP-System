@@ -9,10 +9,21 @@ const createRoleController = async(req,res)=>{
 
         const {role , permissions} = req.body;
 
+
         if(!role || !permissions){
          return res.status(400).json({
                 status: false,
                 message: "role and permissions are required"
+            });
+        }
+
+         const exist = await Role.findOne({role});
+        //  console.log(exist);
+        
+        if(exist){
+          return res.status(400).json({
+                status:false,
+                message:`This ${role} role already created!`
             });
         }
 
@@ -70,4 +81,4 @@ const getRoleController = async(req,res)=>{
 };
 
 
-module.exports = {createRoleController};
+module.exports = {createRoleController,getRoleController};
