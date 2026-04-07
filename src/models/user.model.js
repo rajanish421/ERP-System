@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
-    userId:{
+    userCode:{
         type:String,
         unique:true,
         trim:true,
@@ -28,6 +28,11 @@ const userSchema = mongoose.Schema({
         type:mongoose.Types.ObjectId,
         ref:"Role"
     }
+    ,
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
     
 
 }
