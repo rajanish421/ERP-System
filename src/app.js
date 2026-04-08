@@ -1,6 +1,7 @@
 const express = require("express");
 const { roleRoute } = require("./routes/roleRoutes");
 const schoolRoute = require("./routes/schoolRoute");
+const counterRoute = require("./routes/counterRoute");
 
 const app = express();
 
@@ -15,11 +16,13 @@ app.use("/api/v1" , roleRoute);
 // route for school
 app.use("/api/v1/super-admin",schoolRoute);
 
-// testing api
 
-// app.get("/" , (req,res)=>{
-//     res.send("api is working properly");
-// });
+
+// //route counter
+// app.use("/api/v1/super-admin",counterRoute);  <-- Not in use
+
+
+
 
 
 module.exports = app;
