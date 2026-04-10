@@ -25,8 +25,9 @@ const userSchema = mongoose.Schema({
     },
 
     role:{
-        type:mongoose.Types.ObjectId,
-        ref:"Role"
+        // type:mongoose.Types.ObjectId,
+        // ref:"Role"
+        type:String
     }
     ,
     isActive: {
@@ -40,6 +41,8 @@ const userSchema = mongoose.Schema({
 {timestamps:true}
 
 );
+
+userSchema.index({ schoolId: 1, userCode: 1 }, { unique: true });
 
 const User = mongoose.model("User" , userSchema);
 
