@@ -48,7 +48,10 @@ const createPrincipalController = async(req,res)=>{
        await session.commitTransaction();
         session.endSession();
 
-        sendResponse(res ,201 , "successfully created" , principal);
+        sendResponse(res ,{
+            statusCode:201 ,                         message:"successfully created",
+            data: principal
+        });
        
 
     } catch (error) {
