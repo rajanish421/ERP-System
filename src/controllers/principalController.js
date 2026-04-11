@@ -1,6 +1,6 @@
 const Roles = require("../constants/roles");
 const mongoose = require("mongoose");
-
+const bcrypt = require("bcrypt");
 // create principal controller
 
 const generateUserCode = require("../services/userCode");
@@ -22,7 +22,7 @@ const createPrincipalController = async(req,res)=>{
         //generate userCode
        const userCode = await generateUserCode(Roles.principal,schoolCode,schoolId,session);
 
-        const hashPass = bcrypt.hash("1234567",8);
+        const hashPass = await bcrypt.hash("1234567",8);
 
         // create user
         const userModel = new User({
@@ -52,10 +52,12 @@ const createPrincipalController = async(req,res)=>{
        
 
     } catch (error) {
-
+        console.log(`Error from here ${error}`);
         // rollback
         await session.abortTransaction();
         session.endSession();
        sendError(res , "Internal Error");
     }
 };
+
+module.exports = {createPrincipalController};
