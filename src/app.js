@@ -4,6 +4,7 @@ const schoolRoute = require("./routes/schoolRoute");
 const directorRoute = require("./routes/directorRoute");
 const principalRoute = require("./routes/principalRoute");
 const adminRoute = require("./routes/adminRoute");
+const accountantRoute = require("./routes/accountantRoute");
 
 const app = express();
 
@@ -29,6 +30,11 @@ app.use("/api/v1/super-admin/",principalRoute);
 
 // route for admin
 app.use("/api/v1/super-admin",adminRoute); 
+
+
+// route for accountant
+app.use("/api/v1/super-admin",accountantRoute);
+
 
 // //route counter
 // app.use("/api/v1/super-admin",counterRoute);  <-- Not in use
