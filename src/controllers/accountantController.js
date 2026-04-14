@@ -51,6 +51,12 @@ const createAccountantController = async(req,res)=>{
         await session.commitTransaction();
         session.endSession();
 
+        sendResponse(res,{
+            statusCode:201,
+            message:"successfully created",
+            data:accountant
+        });
+
     } catch (error) {
         await session.abortTransaction();
         session.endSession();
