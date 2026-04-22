@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const accountantSchema = new mongoose.Schema({
+    
         userId : {
             type:mongoose.Types.ObjectId,
             ref:"User",
@@ -25,6 +26,7 @@ const accountantSchema = new mongoose.Schema({
             type:Number,
             required:true,
         },
+
 });
 
 
